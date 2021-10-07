@@ -10,7 +10,6 @@ import java.time.LocalTime;
 import java.time.Month;
 
 
-
 class TarefaTest {
 	/**
 	 * Método que instancia um objeto da classe <b>Tarefa</b> antes de executar cada um dos métodos de teste.
@@ -29,29 +28,24 @@ class TarefaTest {
     public void testBasic() {
     	LocalDate data = LocalDate.of(15, Month.OCTOBER, 2021);
     	
-    	// Verificação dos atributos da classe.
-    	assertEquals(Tarefa.PENDENTE,0);
-    	assertEquals(Tarefa.EM_EXECUCAO,1);
-    	assertEquals(Tarefa.CONCLUIDA,2);
-    	
     	// Verificação dos métodos acessores.
     	assertEquals("Tarefa1",t1.getNome());
     	assertEquals("Minha Tarefa",t1.getDescricao());
-    	assertEquals(Tarefa.PENDENTE, t1.getStatus());
+    	assertEquals(Status.PENDENTE, t1.getStatus());
     	assertFalse(t1.getDataConclusao.equals(data));
     	assertFalse(t1.getAtrasado());
-    	
+    	assertNotNull(t1.getDataConclusao());
     	
     	// Verificação dos métodos modificadores.
     	t1.setNome("Tarefa2");
     	t1.setDescricao("Outro descricao");
     	t1.setDataConclusao(data);
     	t1.setAtrasado();
-    	t1.status(Tarefa.EM_EXECUCAO);
+    	t1.status(Status.EM_EXECUCAO);
     	
     	assertEquals("Tarefa2",t2.getNome());
     	assertEquals("Outra descricao",t2.setDescicao);
-    	assertEquals(Tarefa.EM_EXECUCAO,t1.getStatus());
+    	assertEquals(Status.EM_EXECUCAO,t1.getStatus());
     	assertTrue(t1.getDataConclusao.equals(data));
     	assertTrue(t1.getAtrasado());
     	
