@@ -30,13 +30,18 @@ public class Quadro {
 		}
 	}
 	
-	public void removerTarefa(String nomeTarefa) {
+	public Tarefa removerTarefa(String nomeTarefa) {
+		Tarefa tarefaRemovida = null;
 		Iterator<Tarefa> iterator = tarefas.iterator();
+		
 		while(iterator.hasNext()) {
 			Tarefa tarefa = iterator.next();
 			if(tarefa.getNome().equals(nomeTarefa))
+				tarefaRemovida = tarefa;
 				tarefas.remove(tarefa);
 		}
+		
+		return tarefaRemovida;
 	}
 	
 	public ArrayList<Tarefa> pegarTarefas(){

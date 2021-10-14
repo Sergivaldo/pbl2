@@ -26,8 +26,6 @@ class QuadroTest {
 	 */
 	@Test
 	void testAdicionaTarefa() {
-		Tarefa t1 = new Tarefa("Tarefa1","Descricao Tarefa", LocalDate.of(2000, Month.APRIL, 15));
-		Tarefa t2 = new Tarefa("Tarefa2","Descricao Tarefa 2", LocalDate.of(2000, Month.JUNE, 23));
 		
 		q1.addTarefa("Tarefa1","Descricao Tarefa",LocalDate.of(2000, Month.APRIL, 15));
 		q1.addTarefa("Tarefa2","Descricao Tarefa 2",LocalDate.of(2000, Month.JUNE, 21));
