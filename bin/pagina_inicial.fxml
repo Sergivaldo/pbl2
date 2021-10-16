@@ -39,7 +39,7 @@
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="177.0" prefHeight="508.0" prefWidth="463.0">
+      <AnchorPane layoutX="177.0" prefHeight="513.0" prefWidth="463.0">
          <children>
             <HBox maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="463.0" />
          </children>
