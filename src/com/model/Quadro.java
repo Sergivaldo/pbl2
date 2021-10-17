@@ -53,6 +53,11 @@ public class Quadro {
 		tarefas.add(novaTarefa);
 	}
 	
+	@SuppressWarnings("unused")
+	private void addTarefa(Tarefa tarefa) {
+		tarefas.add(tarefa);
+	}
+	
 	public void editarDescricaoTarefa(String nomeTarefa, String novaDescricao) {
 		Iterator<Tarefa> iterator = tarefas.iterator();
 		while(iterator.hasNext()) {

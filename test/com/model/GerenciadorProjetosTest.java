@@ -1,4 +1,4 @@
-package com.controller;
+package com.model;
 import com.model.GerenciadorProjetos;
 import com.model.Projeto;
 import com.model.Status;
@@ -35,13 +35,13 @@ public class GerenciadorProjetosTest {
 		gProjetos = new GerenciadorProjetos();
 
 		p1 = new Projeto("Projeto1");
-		p1.pegarQuadro(Status.PENDENTE).addTarefa("Tarefa1", "Minha Tarefa", LocalDate.of(19, Month.OCTOBER, 2021));
+		p1.pegarQuadro(Status.PENDENTE).addTarefa("Tarefa1", "Minha Tarefa", LocalDate.of(2021, Month.OCTOBER, 19));
 
 		p2 = new Projeto("Projeto2");
 		p2.pegarQuadro(Status.EM_EXECUCAO).addTarefa("Tarefa2","Descricao Tarefa 2", LocalDate.of(2000, Month.JUNE, 23));
 
 		p3 = new Projeto("Projeto3");
-		p3.pegarQuadro(Status.CONCLUIDA).addTarefa("Tarefa3", "Minha Tarefa", LocalDate.of(18, Month.OCTOBER, 2021));
+		p3.pegarQuadro(Status.CONCLUIDA).addTarefa("Tarefa3", "Minha Tarefa", LocalDate.of(2021, Month.OCTOBER, 18));
 	}
 	
 	
@@ -61,7 +61,7 @@ public class GerenciadorProjetosTest {
 	 * Verifica se os projetos sao removidos corretamente
 	 */
 	@Test
-	public void testRemoverProjetorProjeto() {
+	public void testRemoverProjeto() {
 		gProjetos.removerProjeto(p1.getNome());
 		assertEquals(2, gProjetos.getProjetos().size());
 		gProjetos.removerProjeto(p2.getNome());
