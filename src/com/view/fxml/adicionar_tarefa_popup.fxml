@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="320.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Nova tarefa" textFill="#032330">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField maxWidth="210.0" promptText="Nome" />
+      <TextField alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="70.0" prefWidth="210.0" promptText="Descrição" />
+      <DatePicker prefHeight="25.0" prefWidth="210.0" promptText="Data de conclusão" />
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="229.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #032330; -fx-background-radius: 10;" text="Cancelar" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="170.0" layoutY="10.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #032330; -fx-background-radius: 10;" text="Adicionar" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+   </padding>
+</VBox>

@@ -1,5 +1,4 @@
-package com.controller;
-import com.model.*;
+package com.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;

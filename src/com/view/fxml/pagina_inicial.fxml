@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.paginaInicialController">
+<AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.PaginaInicialController">
    <children>
       <AnchorPane layoutY="-1.0" prefHeight="508.0" prefWidth="177.0">
          <children>
@@ -22,7 +23,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Button layoutX="-1.0" layoutY="107.0" mnemonicParsing="false" onAction="#addProjeto" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: transparent; -fx-graphic: url(res/add.png); -fx-background-repeat: no-repeat; -fx-background-position: right;" text="Adicionar Projeto " textFill="#78a0ae" />
+                        <Button graphicTextGap="15.0" layoutX="-1.0" layoutY="107.0" mnemonicParsing="false" onAction="#addProjeto" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: transparent; -fx-graphic: url(res/add.png); -fx-background-repeat: no-repeat; -fx-background-position: right;" text="Adicionar Projeto " textFill="#78a0ae" />
                         <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="52.0" opacity="0.88" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #78a0ae; -fx-background-radius: 7;">
                            <children>
                               <TextField prefHeight="25.0" prefWidth="118.0" promptText="Pesquisar Projetos" style="-fx-background-color: transparent; -fx-background-radius: 7; -fx-prompt-text-fill: #ebf6fa;" />
@@ -30,18 +31,30 @@
                            </children>
                         </HBox>
                      </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
                   </AnchorPane>
                   <ScrollPane fx:id="scroll" fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" pannable="true" prefHeight="371.0" prefWidth="177.0" style="-fx-background: #032330; -fx-background-color: #032330;" vbarPolicy="NEVER">
                      <content>
                         <VBox fx:id="box" prefHeight="368.0" prefWidth="168.0" />
-                     </content></ScrollPane>
+                     </content>
+                  </ScrollPane>
                </children>
             </VBox>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="177.0" prefHeight="513.0" prefWidth="463.0">
          <children>
-            <HBox maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="463.0" />
+            <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="463.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-graphic: url(/res/close_icon.png); -fx-background-color: transparent;" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox layoutY="44.0" prefHeight="469.0" prefWidth="463.0" />
          </children>
       </AnchorPane>
    </children>

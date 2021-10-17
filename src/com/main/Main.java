@@ -15,16 +15,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
-
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		Pane root = FXMLLoader.load(getClass().getResource("/pagina_inicial.fxml"));
+		
+		Pane root = FXMLLoader.load(getClass().getResource("/fxml/pagina_inicial.fxml"));
 		Scene scene = new Scene(root,640,480);
 		primaryStage.initStyle(StageStyle.UNDECORATED);
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		
 		
 	}
 	
