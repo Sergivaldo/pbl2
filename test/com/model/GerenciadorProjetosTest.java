@@ -5,6 +5,7 @@ import com.model.Status;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -23,8 +24,7 @@ public class GerenciadorProjetosTest {
 	private Projeto p1;
 	private Projeto p2;
 	private Projeto p3;
-	private Projeto tempP;
-	
+
 
     /**
      * Este método é executado antes de cada teste unitario, 
@@ -34,13 +34,13 @@ public class GerenciadorProjetosTest {
 	public void setUp() {
 		gProjetos = new GerenciadorProjetos();
 
-		p1 = new Projeto("Projeto1");
+		p1 = new Projeto("projeto1");
 		p1.pegarQuadro(Status.PENDENTE).addTarefa("Tarefa1", "Minha Tarefa", LocalDate.of(2021, Month.OCTOBER, 19));
 
-		p2 = new Projeto("Projeto2");
+		p2 = new Projeto("projeto2");
 		p2.pegarQuadro(Status.EM_EXECUCAO).addTarefa("Tarefa2","Descricao Tarefa 2", LocalDate.of(2000, Month.JUNE, 23));
 
-		p3 = new Projeto("Projeto3");
+		p3 = new Projeto("projeto3");
 		p3.pegarQuadro(Status.CONCLUIDA).addTarefa("Tarefa3", "Minha Tarefa", LocalDate.of(2021, Month.OCTOBER, 18));
 	}
 	
@@ -62,6 +62,9 @@ public class GerenciadorProjetosTest {
 	 */
 	@Test
 	public void testRemoverProjeto() {
+		gProjetos.adicionaProjeto(p1);
+		gProjetos.adicionaProjeto(p2);
+		gProjetos.adicionaProjeto(p3);
 		gProjetos.removerProjeto(p1.getNome());
 		assertEquals(2, gProjetos.getProjetos().size());
 		gProjetos.removerProjeto(p2.getNome());
@@ -77,13 +80,14 @@ public class GerenciadorProjetosTest {
 	 */
 	@Test
 	public void testPegarProjeto() {
-		tempP = p1;
+		gProjetos.adicionaProjeto(p1);
+		gProjetos.adicionaProjeto(p2);
+		gProjetos.adicionaProjeto(p3);
 		assertSame(p1, gProjetos.pegarProjeto("projeto1"));
-		tempP = p2;
 		assertSame(p2, gProjetos.pegarProjeto("projeto2"));
-		tempP = p3;
 		assertSame(p3, gProjetos.pegarProjeto("projeto3"));
 	}
+	
 	
 	
 	/**
@@ -91,8 +95,11 @@ public class GerenciadorProjetosTest {
 	*/
 	@Test
 	public void testEditarNomeProjeto() {
+		gProjetos.adicionaProjeto(p1);
+		gProjetos.adicionaProjeto(p2);
+		gProjetos.adicionaProjeto(p3);
 		gProjetos.editarNomeProjeto("projeto1", "newprojeto1");
-		assertEquals("newprojeto1", gProjetos.pegarProjeto("newprojeto1"));
+		assertEquals("newprojeto1", gProjetos.pegarProjeto("newprojeto1").getNome());
 	}
 	
 
@@ -100,8 +107,15 @@ public class GerenciadorProjetosTest {
 	 * Testa se a data do sistema esta sendo verificada
 	 * de forma correta
 	 */
+	/**
+	 * Testa se a data do sistema esta sendo verificada
+	 * de forma correta
+	 */
 	@Test
 	public void AtrasarTarefas() {
-		
+		gProjetos.adicionaProjeto(p1);
+		gProjetos.adicionaProjeto(p2);
+		gProjetos.adicionaProjeto(p3);
+		assertTrue(gProjetos.atrasarTarefas());
 	}
 }

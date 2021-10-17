@@ -31,16 +31,11 @@ public class Quadro {
 	}
 	
 	public Tarefa removerTarefa(String nomeTarefa) {
+		Tarefa tarefa = pegarTarefa(nomeTarefa);
 		Tarefa tarefaRemovida = null;
-		Iterator<Tarefa> iterator = tarefas.iterator();
-		
-		while(iterator.hasNext()) {
-			Tarefa tarefa = iterator.next();
-			if(tarefa.getNome().equals(nomeTarefa))
-				tarefaRemovida = tarefa;
-				tarefas.remove(tarefa);
-		}
-		
+		if(tarefa!=null)
+			tarefaRemovida = tarefa;
+			tarefas.remove(tarefa);
 		return tarefaRemovida;
 	}
 	
@@ -53,8 +48,8 @@ public class Quadro {
 		tarefas.add(novaTarefa);
 	}
 	
-	@SuppressWarnings("unused")
-	private void addTarefa(Tarefa tarefa) {
+	
+	public void addTarefa(Tarefa tarefa) {
 		tarefas.add(tarefa);
 	}
 	

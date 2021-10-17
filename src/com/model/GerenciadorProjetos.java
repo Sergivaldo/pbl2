@@ -89,13 +89,14 @@ public class GerenciadorProjetos {
      * Verifica se todas as tarefas do sistema estao atrasadas,
      * caso sim, marca o status delas como atrasada
      */
-    public void atrasarTarefas() {
+    public boolean atrasarTarefas() {
         Iterator<Projeto> it = getProjetos().iterator();
         while(it.hasNext()) {
             Projeto p = it.next();
             marcarTarefasAtrasadas(p.getNome(), Status.PENDENTE);
             marcarTarefasAtrasadas(p.getNome(), Status.EM_EXECUCAO);
         }
+        return true;
     }
     
 }

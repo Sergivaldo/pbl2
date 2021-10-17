@@ -29,11 +29,11 @@ public class ProjetoTest {
      */
 	@BeforeEach
 	public void setUp() {
-		t1 = new Tarefa("Tarefa1", "Minha Tarefa", LocalDate.of(19, Month.OCTOBER, 2021));
+		t1 = new Tarefa("Tarefa1", "Minha Tarefa", LocalDate.of(2021, Month.OCTOBER, 19));
 		p1 = new Projeto("Projeto1");
-		p1.pegarQuadro(Status.PENDENTE).addTarefa("Tarefa1", "Minha Tarefa", LocalDate.of(19, Month.OCTOBER, 2021));
+		p1.pegarQuadro(Status.PENDENTE).addTarefa("Tarefa1", "Minha Tarefa", LocalDate.of(2021, Month.OCTOBER, 19));
 		p1.pegarQuadro(Status.EM_EXECUCAO).addTarefa("Tarefa2","Descricao Tarefa 2", LocalDate.of(2000, Month.JUNE, 23));
-		p1.pegarQuadro(Status.CONCLUIDA).addTarefa("Tarefa3", "Minha Tarefa", LocalDate.of(18, Month.OCTOBER, 2021));
+		p1.pegarQuadro(Status.CONCLUIDA).addTarefa("Tarefa3", "Minha Tarefa", LocalDate.of(2021, Month.OCTOBER, 18));
 		
 	}
 	
@@ -57,12 +57,12 @@ public class ProjetoTest {
 	@Test
 	public void testMoverTarefa() {
 		p1.moverTarefa("Tarefa1", Status.PENDENTE);
-		assertNotNull(t1, p1.pegarQuadro(Status.EM_EXECUCAO).pegarTarefa("Tarefa1"));
+		assertNotNull(p1.pegarQuadro(Status.EM_EXECUCAO).pegarTarefa("Tarefa1"));
 		assertNull(p1.pegarQuadro(Status.PENDENTE).pegarTarefa("Tarefa1"));
 		
-		p1.moverTarefa("Tarefa4", Status.EM_EXECUCAO);
-		assertNotNull(t1, p1.pegarQuadro(Status.CONCLUIDA).pegarTarefa("Tarefa4"));
-		assertNull(p1.pegarQuadro(Status.EM_EXECUCAO).pegarTarefa("Tarefa4"));
+		p1.moverTarefa("Tarefa2", Status.EM_EXECUCAO);
+		assertNotNull(p1.pegarQuadro(Status.CONCLUIDA).pegarTarefa("Tarefa2"));
+		assertNull(p1.pegarQuadro(Status.EM_EXECUCAO).pegarTarefa("Tarefa2"));
 
 	}
 	

@@ -52,6 +52,6 @@ public class Projeto {
 	public void moverTarefa(String nomeTarefa, int indiceQuadroOrigem) {
 		Tarefa tempT = quadroTarefas[indiceQuadroOrigem].removerTarefa(nomeTarefa);
 		tempT.setStatus(indiceQuadroOrigem + 1);
-		quadroTarefas[indiceQuadroOrigem + 1].addTarefa(tempT.getNome(), tempT.getDescricao(), tempT.getDataConclusao());
+		quadroTarefas[indiceQuadroOrigem + 1].addTarefa(tempT);
 	}
 }
