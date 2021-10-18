@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
@@ -10,18 +11,22 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="170.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="48.0" prefWidth="170.0" spacing="10.0">
+      <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="48.0" prefWidth="170.0" spacing="12.0">
          <children>
-            <Label fx:id="nome_tarefa_lbl" alignment="CENTER" prefHeight="17.0" prefWidth="120.0" text="Título da tarefa" textFill="#656565">
+            <Label fx:id="nome_tarefa_lbl" contentDisplay="CENTER" prefHeight="17.0" prefWidth="120.0" text="Título da tarefa" textFill="#656565">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="opcoes_tarefa_btt" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" mnemonicParsing="false" style="-fx-graphic: url(/res/menu_icon_task.png); -fx-background-color:transparent;" />
+            <MenuButton fx:id="opcoes_tarefa_btt" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-graphic: url(/res/menu_icon_task.png);" stylesheets="@../css/menuButtonStyle.css">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Mudar Nome" />
+                <MenuItem mnemonicParsing="false" text="Mudar Descrição" />
+                  <MenuItem mnemonicParsing="false" text="Mudar Data" />
+                  <MenuItem mnemonicParsing="false" text="Mover Tarefa" />
+              </items>
+            </MenuButton>
          </children>
-         <padding>
-            <Insets left="5.0" right="5.0" />
-         </padding>
       </HBox>
       <Label fx:id="descricao_tarefa" alignment="TOP_LEFT" prefHeight="191.0" prefWidth="160.0" text="Descrição da tarefa" textAlignment="JUSTIFY" textFill="#656565" />
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -37,6 +42,6 @@
       </HBox>
    </children>
    <padding>
-      <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+      <Insets bottom="10.0" left="8.0" right="8.0" top="10.0" />
    </padding>
 </VBox>

@@ -1,8 +1,8 @@
 package com.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
 import javafx.scene.layout.HBox;
 
 public class TarefaViewController {
@@ -11,7 +11,7 @@ public class TarefaViewController {
     private Label nome_tarefa_lbl;
 
     @FXML
-    private Button opcoes_tarefa_btt;
+    private MenuButton opcoes_tarefa_btt;
 
     @FXML
     private Label descricao_tarefa;

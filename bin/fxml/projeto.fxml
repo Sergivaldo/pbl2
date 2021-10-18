@@ -2,15 +2,21 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="40.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="168.0" spacing="10.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.ProjetoViewController">
    <children>
-      <Label fx:id="nome_projeto_lbl" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nome do projeto" textFill="#d9ecf8" />
-      <Button fx:id="projeto_menu_btt" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" mnemonicParsing="false" style="-fx-graphic: url(/res/menu_project_icon.png); -fx-background-color:transparent;" />
+      <Button fx:id="nome_projeto_btt" alignment="BASELINE_LEFT" graphicTextGap="0.0" mnemonicParsing="false" onAction="#quadro" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: transparent;" text="Nome do projeto" textFill="#d9ecf8" />
+      <MenuButton fx:id="projeto_menu_btt" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" popupSide="RIGHT" style="-fx-background-color: transparent; -fx-graphic: url(/res/menu_project_icon.png);" stylesheets="@../css/menuButtonStyle.css">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Renomear" />
+          <MenuItem mnemonicParsing="false" text="Remover" />
+        </items>
+      </MenuButton>
    </children>
    <padding>
-      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      <Insets bottom="5.0" top="5.0" />
    </padding>
 </HBox>

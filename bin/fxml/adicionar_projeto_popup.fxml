@@ -4,19 +4,24 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.PopUpAddProjetoController">
    <children>
       <Label text="Novo Projeto" textFill="#032330">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField promptText="Nome" />
-      <Button alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #032330; -fx-background-radius: 10;" text="Adicionar" textFill="WHITE" />
+      <TextField fx:id="input_nome" promptText="Nome" />
+      <HBox alignment="CENTER" spacing="20.0">
+         <children>
+            <Button fx:id="cancelar_btt" alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #032330; -fx-background-radius: 10;" text="Cancelar" textFill="WHITE" />
+            <Button fx:id="adicionar_btt" alignment="CENTER" mnemonicParsing="false" prefWidth="100.0" onAction="#salvarNome" style="-fx-background-color: #032330; -fx-background-radius: 10;" text="Adicionar" textFill="WHITE" />
+         </children>
+      </HBox>
    </children>
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
